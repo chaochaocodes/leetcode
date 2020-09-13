@@ -5,20 +5,14 @@
 // Input: s = "anagram", t = "nagaram" // true
 // Input: s = "rat", t = "car"  // false
 
+// if input is a sentence, account for spaces and cases
+// s = s.replace(/[^\w]/g, '').toLowerCase()
+
 var isAnagram = function(s, t) {
   if (s.length !== t.length) return false
-  if (s == "" && t == "") return true
-  let sSort = s.split('').sort()
-  let tSort = t.split('').sort()
-
-  let j = 0
-    for (i = 0; i < sSort.length; i++) {
-      if (sSort[i] === tSort[j] && sSort.length === 1) { return true }
-      if (sSort[i] !== tSort[j]) { return false }
-      else if (sSort[i] === tSort[j]) {
-        j++
-      }
-    }
-    return true
+    
+  let sSort = s.split('').sort().join('')
+  let tSort = t.split('').sort().join('')
+  
+  return sSort === tSort
 };
-
