@@ -13,10 +13,14 @@ var strStr = function(haystack, needle) {
   return findNeedle === null ? -1 : findNeedle.index
   // match returns null if not found
   // match returns [ 'll', index: 2, input: 'hello', groups: undefined ]
+  // or return using indexOf(), https://tc39.es/ecma262/#sec-string.prototype.indexof
+  // return needle.length < 1 ? 0 : haystack.indexOf(needle)
+
 };
 
 // Using indexOf which returns -1 when not found
 let strStr = (haystack, needle) => haystack.indexOf(needle);
+return needle.length < 1 ? 0 : haystack.indexOf(needle)
 
 
 haystack = "hello", needle = "ll" // 2
