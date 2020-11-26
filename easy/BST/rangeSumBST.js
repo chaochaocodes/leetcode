@@ -24,7 +24,7 @@ var rangeSumBST = function(root, low, high) {
       if (root.val >= low && root.val <= high) {
           sum += root.val
       }
-      // Approach 1: recursive DFS
+      // Approach 1: recursive, call DFS on left and right
       // rangeSumBST(root.left, low, high)
       // rangeSumBST(root.right, low, high)
 
