@@ -22,3 +22,11 @@ ss = "A man, a plan, a canal: Panama" # True
 s2 = "race a car" # False
 
 isPalindrome(s2)
+
+
+# 2. Using .isalunum (is alphanumeric)
+def isPalindrome(s):
+    s_check = (''.join(ch for ch in s if ch.isalnum())).lower()
+    if s_check == s_check[::-1]:
+        return True
+    return False
