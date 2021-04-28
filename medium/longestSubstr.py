@@ -31,6 +31,7 @@ def lengthOfLongestSubstring(s):
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         if not s: return 0
+
         d=dict()
         m=0
         j=0
@@ -39,6 +40,8 @@ class Solution(object):
                 j=d[s[i]]+1
             else:
                 m = max(m,i-j+1)
+
+            # dict keeps track of current letter's index
             d[s[i]]=i
         return m
 
